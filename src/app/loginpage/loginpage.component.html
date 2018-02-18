@@ -1,0 +1,29 @@
+
+<form [formGroup]="myForm" (ngSubmit)="userLogin(myForm.value)">
+
+  <mat-form-field class="example-full-width">
+  <input matInput placeholder="Email" [formControl]="myForm.controls['Email']">
+  <mat-error *ngIf="myForm.controls['Email'].hasError('pattern') && myForm.controls['Email'].touched">
+    Please enter a valid email address
+  </mat-error>
+  <mat-error *ngIf="myForm.controls['Email'].hasError('required')">
+    Email is <strong>required</strong>
+  </mat-error>
+</mat-form-field>
+<br>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Password" type="password" [formControl]="myForm.controls['PassWord']">
+  <!--<mat-error *ngIf="myForm.controls['PassWord'].hasError('pattern') && myForm.controls['PassWord'].touched">
+    Please enter a valid password
+  </mat-error>-->
+  <mat-error *ngIf="myForm.controls['PassWord'].hasError('required') && myForm.controls['PassWord'].touched">
+    Please Enter Your password
+  </mat-error>
+</mat-form-field>
+<br>
+<button mat-button type="submit" [disabled]="!myForm.valid">submit</button>
+<br>
+<a routerLink='/registration' routerLinkActive="active" ><strong><ul>New user? Register Here</ul></strong></a>
+</form>
+
+

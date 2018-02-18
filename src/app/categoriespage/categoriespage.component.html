@@ -1,0 +1,82 @@
+<form (ngSubmit)="categories()" name="categoryForm">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="category Number" [(ngModel)]="categorieNames.categoryNumber"
+           name="categoryNo" (blur)="inputChange(categorieNames.categoryNumber)" tabindex="1">
+
+  </mat-form-field>
+<mat-form-field class="example-full-width">
+  <!--<input matInput placeholder="" [(ngModel)]="categorieNames.name" name="name" >-->
+  <input matInput placeholder="category detailes" [(ngModel)]="categorieNames.detailes" name="name" [disabled]="isDisable">
+ <!-- <mat-error *ngIf="myForm.controls['UserName'].hasError('required') && myForm.controls['UserName'].touched">
+    Please Enter Your Name
+  </mat-error>-->
+</mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Category value" [(ngModel)]="categorieNames.value" name="value" [disabled]="isDisable">
+    <!-- <mat-error *ngIf="myForm.controls['UserName'].hasError('required') && myForm.controls['UserName'].touched">
+       Please Enter Your Name
+     </mat-error>-->
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="phonem code" [(ngModel)]="categorieNames.phonemcode" name="phonemcode" [disabled]="isDisable">
+    <!-- <mat-error *ngIf="myForm.controls['UserName'].hasError('required') && myForm.controls['UserName'].touched">
+       Please Enter Your Name
+     </mat-error>-->
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput #message maxlength="256" rows="5" placeholder="Type" [(ngModel)]="categorieNames.Type" name="description" [disabled]="isDisable">
+    <mat-hint align="start"><strong></strong></mat-hint>
+    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+
+  </mat-form-field>
+
+  <!--<mat-form-field class="example-full-width">
+    <input matInput placeholder="code" [(ngModel)]="categorieNames.code" name="code" >
+    &lt;!&ndash; <mat-error *ngIf="myForm.controls['UserName'].hasError('required') && myForm.controls['UserName'].touched">
+       Please Enter Your Name
+     </mat-error>&ndash;&gt;
+  </mat-form-field>-->
+<br>
+  <mat-radio-group [(ngModel)]="categorieNames.wordActive" [ngModelOptions]="{standalone: true}" [disabled]="isDisable">
+    <mat-radio-button  value="true" name="wordActive">yes</mat-radio-button>
+    <mat-radio-button  value="false"  name="wordActive">no</mat-radio-button>
+  </mat-radio-group>
+
+  <button mat-button type="submit" [disabled]="isDisable" >submit</button>
+</form>
+
+<!--<mat-list flex>
+
+<mat-list-item *ngFor="let list of categoriesData">
+  <p matLine>{{list.name}}</p>
+  <p matLine>{{list.name}}</p>
+  <p matLine>{{list.name}}</p>
+  <p matLine>{{list.name}}</p>
+</mat-list-item>
+
+</mat-list>-->
+<!--<perfect-scrollbar class="container">
+<mat-card class="example-card" *ngFor="let list of categoriesData" >
+    <mat-card-header >
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{list.name}}</mat-card-title>
+      <mat-card-subtitle>{{list.name}}</mat-card-subtitle>
+      <mat-card-title>{{list.name}}</mat-card-title>
+      <mat-card-subtitle>{{list.name}}</mat-card-subtitle><mat-card-title>{{list.name}}</mat-card-title>
+      <mat-card-subtitle>{{list.name}}</mat-card-subtitle><mat-card-title>{{list.name}}</mat-card-title>
+      <mat-card-subtitle>{{list.name}}</mat-card-subtitle><mat-card-title>{{list.name}}</mat-card-title>
+      <mat-card-subtitle>{{list.name}}</mat-card-subtitle><mat-card-title>{{list.name}}</mat-card-title>
+      <mat-card-subtitle>{{list.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions class="actions-background">
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</perfect-scrollbar>-->
+<!--<mat-list>
+  <mat-list-item *ngFor="let item of categoriesData">
+    <mat-card-title (click)="catSubmit(item._id)">{{item.name}}</mat-card-title>
+    <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
+  </mat-list-item>
+</mat-list>-->

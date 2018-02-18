@@ -1,0 +1,54 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Type">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Type}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="categoryNumber" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header> catNumber </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.categoryNumber}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="detailes">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> detailes </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.detailes}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="value">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> value </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phonemcode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> phonemcode </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phonemcode}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="createdTime">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> c.Time </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.createdTime}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="wordActive">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> wordActive </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.wordActive}} </mat-cell>
+    </ng-container>
+   <!-- <ng-container matColumnDef="_id">
+      <mat-header-cell *matHeaderCellDef> _id </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element._id}} </mat-cell>
+    </ng-container>-->
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -1,0 +1,47 @@
+<!--<mat-form-field  class="shorta"></mat-form-field>-->
+
+  <form [formGroup]="myForm" (ngSubmit)="save(myForm.value)">
+    <mat-form-field class="example-full-width" [floatPlaceholder]="myForm.controls['UserName']">
+      <input type="text" matInput placeholder="Enter your Name" [formControl]="myForm.controls['UserName']">
+      <mat-error *ngIf="myForm.controls['UserName'].hasError('required') && myForm.controls['UserName'].touched">
+        Please Enter Your Name
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" [floatPlaceholder]="myForm.controls['MobileNumber']">
+      <input type="text" matInput placeholder="Enter your MobileNumber" [formControl]="myForm.controls['MobileNumber']">
+      <mat-error *ngIf="myForm.controls['MobileNumber'].hasError('pattern') && myForm.controls['MobileNumber'].touched">
+        Please enter 10 digit mobilenumber
+      </mat-error>
+      <mat-error *ngIf="myForm.controls['MobileNumber'].hasError('required') && myForm.controls['MobileNumber'].touched">
+        Please Enter Your MobileNumber
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" [floatPlaceholder]="myForm.controls['Email']">
+      <input  type="text" matInput placeholder="Email" [formControl]="myForm.controls['Email']">
+      <mat-error *ngIf="myForm.controls['Email'].hasError('pattern') && myForm.controls['Email'].touched">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="myForm.controls['Email'].hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" [floatPlaceholder]="myForm.controls['PassWord']">
+      <input type="text" matInput placeholder="Password" type="password" [formControl]="myForm.controls['PassWord']">
+      <mat-error *ngIf="myForm.controls['PassWord'].hasError('pattern') && myForm.controls['PassWord'].touched">
+        Please enter a valid password
+      </mat-error>
+      <mat-error *ngIf="myForm.controls['PassWord'].hasError('required') && myForm.controls['PassWord'].touched">
+        Please Enter Your password
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-button type="submit" [disabled]="!myForm.valid">submit</button>
+    <br>
+    <a routerLink='/login' routerLinkActive="active" ><strong><ul>already a user? Login</ul></strong></a>
+  </form>
+
+
+

@@ -1,0 +1,126 @@
+<div style="background-color: red">
+<button (click)="sidenav.open()" float="right">menu</button>
+</div>
+  <mat-sidenav-container>
+    <mat-sidenav mode="push" #sidenav >Drawer content</mat-sidenav>
+    <div class="my-content">
+      <!--<mat-grid-list class="categorieslist" cols="8" rowHeight="600px">-->
+<!--
+      <mat-grid-tile [colspan]=1
+                     [rowspan]=1>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=3
+                     [rowspan]=1>-->
+        <mat-card class="cardwidth">
+
+          <router-outlet></router-outlet>
+        </mat-card>
+      <!--</mat-grid-tile>-->
+     <!-- <mat-grid-tile [colspan]=1
+                     [rowspan]=1>
+      </mat-grid-tile>-->
+
+    <!--</mat-grid-list>-->
+    </div>
+
+      <!--<mat-grid-list cols="3" >
+        <mat-grid-tile [colspan]=1
+                       [rowspan]=1>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=1
+                       [rowspan]=1>-->
+    <div style="text-align: center">All Right Received@2017</div>
+       <!-- </mat-grid-tile>
+        <mat-grid-tile [colspan]=1
+                       [rowspan]=1>
+        </mat-grid-tile>
+      </mat-grid-list>-->
+
+  </mat-sidenav-container>
+
+<!--
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav class="example-sidenav">
+    <button type="button" mat-button>
+      Open sidenav
+    </button>
+    <br>
+    <button type="button" mat-button>
+      Open sidenav
+    </button>
+    <br>
+    <button type="button" mat-button>
+      Open sidenav
+    </button>
+    <br>
+    <button type="button" mat-button>
+      Open sidenav
+    </button>
+  </mat-sidenav>
+  <mat-card style="background-color: #0d3349">
+    <mat-grid-list cols="10" rowHeight="15px">
+
+      <mat-grid-tile [colspan]=1
+                    [rowspan]=1>
+        <button mat-button class="mat-icon-button md-primary" aria-label="Settings" (click)="sidenav.open()">
+          menu
+        </button>
+
+
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=7
+                    [rowspan]=1>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=2
+                    [rowspan]=1>
+        <button mat-button routerLink='/registration' routerLinkActive="active">registration</button>
+        &nbsp;&nbsp;
+        <button mat-button routerLink='/login' routerLinkActive="active">login</button>
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </mat-card>
+-->
+
+  <!--<perfect-scrollbar class="container" [config]="config">
+    <div class="content" >
+      <mat-grid-list class="categorieslist" cols="8" rowHeight="700px">
+
+        <mat-grid-tile [colspan]=1
+                      [rowspan]=1>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=3
+                      [rowspan]=1>
+          <mat-card class="cardwidth">
+            <router-outlet></router-outlet>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=1
+                      [rowspan]=1>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </div>
+  </perfect-scrollbar>
+
+  <mat-card style="background-color:#1b6d85">
+    <mat-grid-list cols="3" rowHeight="15px">
+      <mat-grid-tile [colspan]=1
+                    [rowspan]=1>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=1
+                    [rowspan]=1>All Right Received@2017
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]=1
+                    [rowspan]=1>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card>-->
+
+<!--
+</mat-sidenav-container>-->
+
+
+

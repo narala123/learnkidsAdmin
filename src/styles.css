@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import '~https://fonts.googleapis.com/icon?family=Material+Icons';*/
+/*@import '~https://fonts.googleapis.com/icon?family=Roboto';*/
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.15/css/perfect-scrollbar.min.css';
+body {
+  /*font-family: Roboto;*/
+}
+@font-face {
+  font-family: words;
+  src:url('FunSized.ttf');
+
+}
+
+.shorta{
+  font-family: words;
+  font-size : 5em;
+}
+.shorta::after{
+  content : "a";
+}
+.phonicshorta{
+  content : "a";
+}
+.shortb{
+  font-family: words;
+  font-size : 5em;
+}
+.shortb::after{
+  content : "a";
+}
+.phonicshortb{
+  content : "a";
+}
+.shortc{
+  font-family: words;
+  font-size : 5em;
+}
+.shortc::after{
+  content : "a";
+}
+.phonicshortc{
+  content : "a";
+}
+
+

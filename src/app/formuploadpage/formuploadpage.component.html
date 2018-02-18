@@ -1,0 +1,72 @@
+<!--
+-->
+
+
+
+
+      <form [formGroup]="uploadForm" (ngSubmit)="uploadData(uploadForm.value)">
+        <mat-form-field class="example-full-width">
+
+          <input matInput placeholder="Enter your word" [formControl]="uploadForm.controls['Word']">
+          <mat-error *ngIf="uploadForm.controls['Word'].hasError('required')">
+            Please Enter Your Word
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-select placeholder="select drop down count" class="example-full-width"  [(ngModel)] = "serialNum" [ngModelOptions]="{standalone: true}" (change)="Count(serialNum)">
+          <mat-option *ngFor="let serialNum of dropDownnumbers" value="{{serialNum}}">{{serialNum}}
+
+          </mat-option>
+
+        </mat-select>
+
+        <br>
+        <br>
+        <div *ngFor = "let a of countDrops">
+        <mat-select  class="example-full-width" [(ngModel)]="catData[a]" [ngModelOptions]="{standalone: true}"(change)="changeDropDown()">
+          <mat-option *ngFor="let catData of categoriesData" [value]="catData.description">{{catData.description}}
+
+          </mat-option>
+        </mat-select>
+        </div>
+
+        <br>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Enter your ImageUrl" [formControl]="uploadForm.controls['ImageUrl']">
+          <mat-error *ngIf="uploadForm.controls['ImageUrl'].hasError('required')">
+            Please Enter Your ImageUrl
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+        <input type="file" (change)="handleUpload($event)" required>
+
+        <!--<mat-error *ngIf="myForm.controls['UserName'].hasError('required') && myForm.controls['UserName'].touched">
+          Please Enter Your Name
+        </mat-error><br>-->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Enter your WordFamily" [formControl]="uploadForm.controls['WordFamily']">
+          <mat-error *ngIf="uploadForm.controls['WordFamily'].hasError('required')">
+            Please Enter Your WordFamily
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <input matInput #message maxlength="256" rows="5" placeholder="Description"
+                 [formControl]="uploadForm.controls['Description']">
+          <mat-hint align="start"><strong>Image description</strong></mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          <mat-error *ngIf="uploadForm.controls['Description'].hasError('required')">
+            Please Enter image Desciption
+          </mat-error>
+        </mat-form-field>
+
+        <br>
+        <br>
+        <button mat-button type="submit" [disabled]="!uploadForm.valid">submit</button>
+      </form>
+
+
